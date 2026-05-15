@@ -55,8 +55,8 @@ export const houses: House[] = [
       "https://images.unsplash.com/photo-1555854817-2b214be25070?auto=format&fit=crop&q=80&w=800",
       "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800"
     ],
-    whatsappNumber: "254733333333",
-    landlordName: "Sarah M.",
+    whatsappNumber: "254712345678",
+    landlordName: "Sarah Muthoni.",
     createdAt: new Date().toISOString()
   },
   {
