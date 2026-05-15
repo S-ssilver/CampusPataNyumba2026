@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { houses } from './houses';
 import { House, FilterCriteria, SmartAlert, AppNotification, User, HostRequest, ContactLead } from './types';
