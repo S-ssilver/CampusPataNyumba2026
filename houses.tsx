@@ -2,6 +2,11 @@
 import { House } from './types';
 import house1 from "./assets/images/kirigiti1.jpg";
 import house2 from "./assets/images/kirigiti2.jpg";
+import house3 from "./assets/images/KU1.jpg";
+import house4 from "./assets/images/KU2.jpg";
+import house5 from "./assets/images/Strathmore1.jpg";
+import house6 from "./assets/images/Strathmore2.jpg";
+
 
 export const houses: House[] = [
   {
@@ -53,9 +58,7 @@ export const houses: House[] = [
     available: "Immediately",
     amenities: ["Running Water", "Free WiFi", "Study Area"],
     description: "Affordable shared accommodation perfect for budget-conscious students.",
-    photos: [
-      "https://images.unsplash.com/photo-1555854817-2b214be25070?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800"
+    photos: [house3, house4
     ],
     whatsappNumber: "254712345678",
     landlordName: "Sarah Muthoni.",
@@ -72,9 +75,7 @@ export const houses: House[] = [
     available: "1st Next Month",
     amenities: ["Running Water", "24/7 Security", "Gym Access"],
     description: "Luxury bedsitter in a modern apartment complex. Features high-end finishes.",
-    photos: [
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1536376074432-cd21f796263b?auto=format&fit=crop&q=80&w=800"
+    photos: [house5,house6
     ],
     whatsappNumber: "254744444444",
     landlordName: "Kevin O.",
