@@ -16,7 +16,7 @@ export const houses: House[] = [
     location: "Kirigiti, Kiambu",
     campus: "KINAP",
     type: "Bedsitter",
-    distance: "1.2km from campus",
+    distance: "0.3km from campus",
     available: "Immediately",
     amenities: ["Running Water", "24/7 Security", "Free WiFi", "Parking Space"],
     description: "Beautiful and spacious bedsitter located in a secure compound. Perfect for students with all necessary amenities included.",
@@ -36,7 +36,7 @@ export const houses: House[] = [
     campus: "JKUAT",
     type: "Single Room",
     distance: "0.8km from campus",
-    available: "Next Week",
+    available: "Next Month",
     amenities: ["Running Water", "Security", "Shared Kitchen", "Laundry Area"],
     description: "Cozy single room in a student-friendly apartment. Great location close to campus.",
     photos: [
