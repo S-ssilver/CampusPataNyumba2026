@@ -18,7 +18,7 @@ export const houses: House[] = [
     type: "Bedsitter",
     distance: "0.3km from campus",
     available: "Immediately",
-    amenities: ["Running Water", "24/7 Security", "Free WiFi", "Parking Space"],
+    amenities: ["Running Water", "24/7 Security", "Free WiFi"],
     description: "Beautiful and spacious bedsitter located in a secure compound. Perfect for students with all necessary amenities included.",
     photos: [house1, house2
     ],
