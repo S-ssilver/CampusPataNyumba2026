@@ -26,6 +26,7 @@ export interface House {
   whatsappNumber: string;
   landlordName: string;
   createdAt: string;
+  mapLink?: string;
 }
 
 export interface ContactLead {

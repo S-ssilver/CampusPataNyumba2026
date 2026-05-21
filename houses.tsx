@@ -32,6 +32,7 @@ export const houses: House[] = [
       
     whatsappNumber: "254720689017",
     landlordName: "Mrs. Eunice",
+    mapLink: "https://maps.app.goo.gl/Dvtdf6GEvwXfpZrB9",
     createdAt: new Date().toISOString()
   },
   {
