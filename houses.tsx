@@ -110,7 +110,7 @@ export const houses: House[] = [
   createdAt: new Date().toISOString()
 },
 {
-  id: 3,
+  id: 6,
   title: "Affordable Studio near UON",
   price: 12000,
   location: "Ngara, Nairobi",
