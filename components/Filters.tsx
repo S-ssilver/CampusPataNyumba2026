@@ -10,8 +10,8 @@ interface FiltersProps {
 }
 
 export const Filters: React.FC<FiltersProps> = ({ criteria, onChange, onClear }) => {
-  const campuses = ["KINAP", "JKUAT", "KU", "Strathmore"];
-  const types = ["Bedsitter", "Single Room", "Shared Room"];
+  const campuses = ["KINAP", "JKUAT", "KU", "Strathmore", "UON"];
+  const types = ["Bedsitter", "Single Room", "Shared Room","Studio Apartment"];
   const priceRanges = [5000, 10000, 15000, 20000];
 
   const hasFilters = criteria.campus !== '' || criteria.type !== '' || criteria.maxPrice !== null;
