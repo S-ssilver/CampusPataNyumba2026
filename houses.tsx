@@ -6,6 +6,12 @@ import house3 from "./assets/images/KU1.jpg";
 import house4 from "./assets/images/KU2.jpg";
 import house5 from "./assets/images/Strathmore1.jpg";
 import house6 from "./assets/images/Strathmore2.jpg";
+import house7 from "./assets/images/KU3.jpg";
+import house8 from "./assets/images/KU4.jpg";
+import house9 from "./assets/images/KU5.jpg";
+import house10 from "./assets/images/UON1.jpg";
+import house11 from "./assets/images/UON2.jpg";
+import house12 from "./assets/images/UON3.jpg";
 
 
 export const houses: House[] = [
@@ -80,5 +86,51 @@ export const houses: House[] = [
     whatsappNumber: "254744444444",
     landlordName: "Kevin O.",
     createdAt: new Date().toISOString()
-  }
+  },
+  {
+  id: 5,
+  title: "Modern Bedsitter near KU",
+  price: 9500,
+  location: "Kahawa West, Nairobi",
+  campus: "Kenyatta University",
+  type: "Bedsitter",
+  distance: "500m from campus",
+  available: "Immediately",
+  amenities: [
+    "WiFi",
+    "Parking",
+    "24/7 Security"
+  ],
+  description:
+    "Modern student apartment near KU with spacious rooms and reliable water.",
+  photos: [house7,house8,house9
+  ],
+  whatsappNumber: "254700000000",
+  landlordName: "Mr. James",
+  createdAt: new Date().toISOString()
+},
+{
+  id: 3,
+  title: "Affordable Studio near UON",
+  price: 12000,
+  location: "Ngara, Nairobi",
+  campus: "University of Nairobi",
+  type: "Studio Apartment",
+  distance: "10 minutes from campus",
+  available: "Immediately",
+  amenities: [
+    "Free WiFi",
+    "24/7 Security",
+    "Water Included",
+    "Parking",
+    "Study Area"
+  ],
+  description:
+    "Modern and affordable studio apartment ideal for University of Nairobi students. Located in a secure area with easy access to campus and public transport.",
+  photos: [house10,house11,house12
+    ],
+  whatsappNumber: "254712345678",
+  landlordName: "Mrs. Atieno",
+  createdAt: new Date().toISOString()
+},
 ];

@@ -15,7 +15,7 @@ export interface House {
   id: number;
   title: string;
   campus: string;
-  type: 'Bedsitter' | 'Single Room' | 'Shared Room';
+  type: 'Bedsitter' | 'Single Room' | 'Shared Room'| 'Studio Apartment';
   price: number;
   location: string;
   distance: string;
