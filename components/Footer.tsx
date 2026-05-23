@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
           <ul className="space-y-4">
             <li className="flex items-start space-x-3 text-sm text-slate-500 dark:text-slate-400">
               <MapPin size={18} className="text-blue-600 flex-shrink-0" />
-              <span>12th Floor, Prism Tower, 3rd Ngong Avenue, Nairobi, Kenya</span>
+              <span>Nairobi, Kenya</span>
             </li>
             <li className="flex items-center space-x-3 text-sm text-slate-500 dark:text-slate-400">
               <Phone size={18} className="text-blue-600 flex-shrink-0" />
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
             </li>
             <li className="flex items-center space-x-3 text-sm text-slate-500 dark:text-slate-400">
               <Mail size={18} className="text-blue-600 flex-shrink-0" />
-              <span>campuspatanyumba@gmail.com</span>
+              <span>CampusPataNyumba@gmail.com</span>
             </li>
           </ul>
         </div>
