@@ -107,7 +107,7 @@ export const houses: House[] = [
   photos: [house7,house8,house9
   ],
   whatsappNumber: "254700000000",
-  landlordName: "Mr. James",
+  landlordName: "Nonchalant Gitau",
   createdAt: new Date().toISOString()
 },
 {
