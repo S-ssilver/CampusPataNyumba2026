@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
         <div>
           <h4 className="font-bold text-slate-800 dark:text-white mb-6 uppercase tracking-widest text-xs">Quick Links</h4>
           <ul className="space-y-4">
-            {['Search Houses', 'Favorites', 'Smart Alerts', 'List Property', 'Privacy Policy'].map(link => (
+            {['Search Houses', 'Favorites', 'Smart Alerts', 'Privacy Policy'].map(link => (
               <li key={link}>
                 <a href="#" className="text-slate-500 dark:text-slate-400 text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center group">
                   <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
 
         <div>
           <h4 className="font-bold text-slate-800 dark:text-white mb-6 uppercase tracking-widest text-xs">Stay Updated</h4>
-          <p className="text-slate-500 dark:text-slate-400 text-sm mb-4">Join 5,000+ students receiving weekly housing updates.</p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm mb-4">Join 1,000+ students receiving weekly housing updates.</p>
           <div className="flex bg-slate-100 dark:bg-slate-800 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700">
             <input 
               type="email" 

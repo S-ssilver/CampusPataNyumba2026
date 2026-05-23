@@ -10,7 +10,6 @@ import { Footer } from './components/Footer';
 import { Logo } from './components/Logo';
 import { HostModal, ProfileModal, LogoutModal } from './components/ActionModals';
 import { AdminDashboard } from './components/AdminDashboard';
-import { LoginPage } from './components/LoginPage';
 import { Home, Heart, LogOut, User as UserIcon, Sun, Moon, Compass, Sparkles, Building, Shield, SlidersHorizontal, X, LogIn } from 'lucide-react';
 import Swal from 'sweetalert2';
 
@@ -36,7 +35,6 @@ const App: React.FC = () => {
   const [filterCriteria, setFilterCriteria] = useState<FilterCriteria>({ campus: '', type: '', maxPrice: null });
   const [selectedHouse, setSelectedHouse] = useState<House | null>(null);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -145,6 +143,7 @@ const App: React.FC = () => {
   };
 
   const ensureLoggedIn = (action: () => void) => {
+  
     if (!currentUser) {
       setIsLoginModalOpen(true);
       return;
@@ -152,19 +151,28 @@ const App: React.FC = () => {
     action();
   };
 
-  const toggleFavorite = (id: number) => {
-    ensureLoggedIn(() => {
-      setFavorites(prev => {
-        const isFav = prev.includes(id);
-        if (isFav) {
-           addNotification({ title: 'Removed', message: 'Home removed from favorites', type: 'info' });
-           return prev.filter(fid => fid !== id);
-        }
-        addNotification({ title: 'Saved!', message: 'Home added to your favorites', type: 'success' });
-        return [...prev, id];
+ const toggleFavorite = (id: number) => {
+  setFavorites(prev => {
+    const isFav = prev.includes(id);
+
+    if (isFav) {
+      addNotification({
+        title: 'Removed',
+        message: 'Home removed from favorites',
+        type: 'info'
       });
+      return prev.filter(fid => fid !== id);
+    }
+
+    addNotification({
+      title: 'Saved!',
+      message: 'Home added to your favorites',
+      type: 'success'
     });
-  };
+
+    return [...prev, id];
+  });
+};
 
   const handleAdminAction = (id: string, action: 'approved' | 'declined') => {
     setHostRequests(prev => prev.map(r => r.id === id ? { ...r, status: action } : r));
@@ -205,7 +213,13 @@ const App: React.FC = () => {
                </button>
              </div>
            ) : (
-             <button onClick={() => setIsLoginModalOpen(true)} className="w-full py-4 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl shadow-blue-600/20 active:scale-95 transition-all">Sign In / Join</button>
+             <a
+
+   href="mailto:campuspata@gmail.com?subject=Campus%20Pata%20Nyumba%20Feedback&body=Hello%20Campus%20Pata%20Nyumba%2C%0A%0AI%20have%20feedback%20about%20the%20website."
+  className="w-full flex items-center justify-center py-4 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl shadow-blue-600/20"
+  >
+  Send Feedback
+</a>
            )}
         </div>
       </aside>
@@ -264,14 +278,7 @@ const App: React.FC = () => {
       )}
 
       {/* Auth Modals */}
-      {isLoginModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-4 animate-in fade-in duration-300">
-          <div className="relative w-full max-w-5xl h-[90vh] md:h-auto overflow-hidden rounded-[3rem] shadow-2xl bg-white dark:bg-slate-900">
-            <button onClick={() => setIsLoginModalOpen(false)} className="absolute top-8 right-8 z-50 p-2 text-slate-400 hover:text-white transition-colors"><X size={28} /></button>
-            <LoginPage onLogin={(user) => { setCurrentUser(user); setIsLoginModalOpen(false); }} />
-          </div>
-        </div>
-      )}
+      
 
       {activeModal === 'profile' && currentUser && <ProfileModal user={currentUser} onUpdate={setCurrentUser} onClose={() => setActiveModal(null)} />}
       {activeModal === 'logout' && <LogoutModal onClose={() => setActiveModal(null)} onSuccess={() => handleLogout()} />}
@@ -292,3 +299,7 @@ const NavItem: React.FC<{ icon: React.ReactNode, label: string, active: boolean,
 );
 
 export default App;
+function setIsLoginModalOpen(arg0: boolean) {
+  throw new Error('Function not implemented.');
+}
+
