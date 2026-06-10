@@ -215,7 +215,7 @@ const App: React.FC = () => {
            ) : (
              <a
 
-   href="mailto:campuspatanyumba@gmail.com?subject=Campus%20Pata%20Nyumba%20Feedback&body=Hello%20Campus%20Pata%20Nyumba%2C%0A%0AI%20have%20feedback%20about%20the%20website."
+   href="mailto:campuspatanyumba26@gmail.com?subject=Campus%20Pata%20Nyumba%20Feedback&body=Hello%20Campus%20Pata%20Nyumba%2C%0A%0AI%20have%20feedback%20about%20the%20website."
   className="w-full flex items-center justify-center py-4 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl shadow-blue-600/20"
   >
   Send Feedback
