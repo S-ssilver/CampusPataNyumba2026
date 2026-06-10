@@ -52,6 +52,7 @@ export const houses: House[] = [
     ],
     whatsappNumber: "254722439653",
     landlordName: "Mr Dan",
+    mapLink: "https://maps.app.goo.gl/bh1DYaoNUTG3a6L89",
     createdAt: new Date().toISOString()
   },
   {
@@ -69,6 +70,7 @@ export const houses: House[] = [
     ],
     whatsappNumber: "254712345678",
     landlordName: "Sarah Muthoni.",
+    mapLink: "https://maps.app.goo.gl/HeedkWBGKuKxPrpm6",
     createdAt: new Date().toISOString()
   },
   {
@@ -86,6 +88,7 @@ export const houses: House[] = [
     ],
     whatsappNumber: "254744444444",
     landlordName: "Kevin O.",
+    mapLink: "https://maps.app.goo.gl/RNokHvLUd6Deus3m8",
     createdAt: new Date().toISOString()
   },
   {
@@ -107,7 +110,8 @@ export const houses: House[] = [
   photos: [house7,house8,house9
   ],
   whatsappNumber: "254700000000",
-  landlordName: "Nonchalant Gitau",
+  landlordName: "Mr. James",
+  mapLink: "https://maps.app.goo.gl/HNT5Eyp4piGeTj4i6",
   createdAt: new Date().toISOString()
 },
 {
@@ -132,6 +136,7 @@ export const houses: House[] = [
     ],
   whatsappNumber: "254712345678",
   landlordName: "Mrs. Atieno",
+  mapLink: "https://maps.app.goo.gl/Lq7M477xwtUB3TvYA",
   createdAt: new Date().toISOString()
 },
 ];
