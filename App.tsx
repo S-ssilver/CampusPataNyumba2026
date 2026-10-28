@@ -10,7 +10,7 @@ import { Footer } from './components/Footer';
 import { Logo } from './components/Logo';
 import { HostModal, ProfileModal, LogoutModal } from './components/ActionModals';
 import { AdminDashboard } from './components/AdminDashboard';
-import { Home, Heart, LogOut, User as UserIcon, Sun, Moon, Compass, Sparkles, Building, Shield, SlidersHorizontal, X, LogIn } from 'lucide-react';
+import { Home, Menu, Heart, LogOut, User as UserIcon, Sun, Moon, Compass, Sparkles, Building, Shield, SlidersHorizontal, X, LogIn } from 'lucide-react';
 import Swal from 'sweetalert2';
 
 const AUTO_LOGOUT_TIMEOUT = 10 * 60 * 1000; 
@@ -35,6 +35,7 @@ const App: React.FC = () => {
   const [filterCriteria, setFilterCriteria] = useState<FilterCriteria>({ campus: '', type: '', maxPrice: null });
   const [selectedHouse, setSelectedHouse] = useState<House | null>(null);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -227,6 +228,115 @@ const App: React.FC = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-h-screen pb-24 md:pb-0 overflow-x-hidden">
         <main className="flex-1 p-4 md:p-10 lg:p-12 w-full max-w-[1600px] mx-auto">
+          
+{/* Mobile menu button */}
+<div className="md:hidden flex items-center justify-between mb-6">
+  <button
+    onClick={() => setIsMobileMenuOpen(true)}
+    aria-label="Open navigation menu"
+    className="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 font-bold text-slate-800 dark:text-white shadow-sm"
+  >
+    <Menu size={22} />
+    <span>Menu</span>
+  </button>
+
+  <span className="text-sm font-bold text-slate-500 dark:text-slate-400">
+    {activeTab === 'favorites' ? 'My Favorites' :
+     activeTab === 'admin' ? 'Admin Console' :
+     selectedHouse ? 'Property Details' : 'Discover'}
+  </span>
+</div>
+
+{/* Mobile navigation drawer */}
+{isMobileMenuOpen && (
+  <div className="md:hidden fixed inset-0 z-[100]">
+    <button
+      aria-label="Close navigation menu"
+      onClick={() => setIsMobileMenuOpen(false)}
+      className="absolute inset-0 w-full h-full bg-black/50"
+    />
+
+    <aside className="absolute left-0 top-0 bottom-0 w-[82%] max-w-80 bg-white dark:bg-slate-900 p-6 shadow-2xl overflow-y-auto">
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-xl font-black text-slate-900 dark:text-white">
+          Campus Pata Nyumba
+        </h2>
+        <button
+          onClick={() => setIsMobileMenuOpen(false)}
+          aria-label="Close menu"
+          className="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          <X size={22} />
+        </button>
+      </div>
+
+      <nav className="space-y-3">
+        <button
+          onClick={() => {
+            setActiveTab('discover');
+            setSelectedHouse(null);
+            setIsMobileMenuOpen(false);
+          }}
+          className="flex w-full items-center gap-3 rounded-xl p-4 font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          <Home size={20} /> Discover Properties
+        </button>
+
+        <button
+          onClick={() => {
+            setActiveTab('favorites');
+            setSelectedHouse(null);
+            setIsMobileMenuOpen(false);
+          }}
+          className="flex w-full items-center gap-3 rounded-xl p-4 font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          <Heart size={20} /> My Favorites
+          <span className="ml-auto">{favorites.length}</span>
+        </button>
+
+        {currentUser?.role === 'admin' && (
+          <button
+            onClick={() => {
+              setActiveTab('admin');
+              setSelectedHouse(null);
+              setIsMobileMenuOpen(false);
+            }}
+            className="flex w-full items-center gap-3 rounded-xl p-4 font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <Shield size={20} /> Admin Console
+          </button>
+        )}
+
+        {currentUser && (
+          <>
+            <div className="border-t border-slate-200 dark:border-slate-700 my-4" />
+
+            <button
+              onClick={() => {
+                setActiveModal('profile');
+                setIsMobileMenuOpen(false);
+              }}
+              className="flex w-full items-center gap-3 rounded-xl p-4 font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >
+              <UserIcon size={20} /> My Profile
+            </button>
+
+            <button
+              onClick={() => {
+                setActiveModal('logout');
+                setIsMobileMenuOpen(false);
+              }}
+              className="flex w-full items-center gap-3 rounded-xl p-4 font-bold text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20"
+            >
+              <LogOut size={20} /> Logout
+            </button>
+          </>
+        )}
+      </nav>
+    </aside>
+  </div>
+)}
+
           {selectedHouse && activeTab !== 'admin' ? (
   <PropertyDetailsPage
     house={selectedHouse}
