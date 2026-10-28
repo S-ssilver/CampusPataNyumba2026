@@ -3,7 +3,7 @@ import { houses } from './houses';
 import { House, FilterCriteria, SmartAlert, AppNotification, User, HostRequest, ContactLead } from './types';
 import { HouseCard } from './components/HouseCard';
 import { Filters } from './components/Filters';
-import { PropertyModal } from './components/PropertyModal';
+import { PropertyDetailsPage } from './components/PropertyDetailsPage';
 import { SmartAlerts } from './components/SmartAlerts';
 import { NotificationToast } from './components/NotificationToast';
 import { Footer } from './components/Footer';
@@ -227,7 +227,15 @@ const App: React.FC = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-h-screen pb-24 md:pb-0 overflow-x-hidden">
         <main className="flex-1 p-4 md:p-10 lg:p-12 w-full max-w-[1600px] mx-auto">
-          {activeTab === 'admin' && currentUser?.role === 'admin' ? (
+          {selectedHouse && activeTab !== 'admin' ? (
+  <PropertyDetailsPage
+    house={selectedHouse}
+    isFavorite={favorites.includes(selectedHouse.id)}
+    onToggleFavorite={toggleFavorite}
+    onBack={() => setSelectedHouse(null)}
+    onContact={() => recordContactLead(selectedHouse)}
+  />
+) : activeTab === 'admin' && currentUser?.role === 'admin' ? (
             <AdminDashboard requests={hostRequests} leads={leads} onAction={handleAdminAction} />
           ) : (
             <div className="flex flex-col space-y-12">
@@ -268,14 +276,7 @@ const App: React.FC = () => {
         <Footer />
       </div>
 
-      {/* Property Modal */}
-      {selectedHouse && (
-        <PropertyModal 
-          house={selectedHouse} 
-          onClose={() => setSelectedHouse(null)} 
-          onContact={() => recordContactLead(selectedHouse)}
-        />
-      )}
+      
 
       {/* Auth Modals */}
       
